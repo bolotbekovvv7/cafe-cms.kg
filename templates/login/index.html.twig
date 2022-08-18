@@ -1,4 +1,6 @@
 {% extends 'base.html.twig' %}
+{% block head %}
+    <link rel="stylesheet" href="{{ asset('css/login.css') }}"> {% endblock %}
 
 {% block body %}
     {% if error %}
@@ -19,39 +21,57 @@
     {#        <button type="submit">login</button> #}
     {#    </form> #}
 
+    {#    <div class="test"><h1> Text </h1></div> #}
 
-    <div class="form-body">
-        <div class="row">
-            <div class="form-holder">
-                <div class="form-content">
-                    <div class="form-items">
-                        <h3>Авторизация</h3>
-                        <p>Заполните данные ниже.</p>
-                        <form class="requires-validation" novalidate action="{{ path('app_login') }}" method="post">
-                            <div class="col-md-12">
-                                <input class="form-control" type="text" name="_username" value="{{ last_username }}"
-                                       placeholder="E-mail Address"
-                                       required>
-                                <div class="valid-feedback">Email field is valid!</div>
-                                <div class="invalid-feedback">Email field cannot be blank!</div>
-                            </div>
-                            <br>
-                            <div class="col-md-12">
-                                <input class="form-control" type="password" name="_password" id="password"
-                                       placeholder="Password"
-                                       required>
-                                <div class="valid-feedback">Password field is valid!</div>
-                                <div class="invalid-feedback">Password field cannot be blank!</div>
-                            </div>
-                            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-                            <div class="form-button mt-3">
-                                <button id="submit" type="submit" class="btn btn-primary">Log in</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+    {#    <div class="form-body"> #}
+    {#        <div class="row"> #}
+    {#            <div class="form-holder"> #}
+    {#                <div class="form-content"> #}
+    {#                    <div class="form-items"> #}
+    {#                        <h3>Авторизация</h3> #}
+    {#                        <p>Заполните данные ниже.</p> #}
+    {#                        <form class="requires-validation" novalidate action="{{ path('app_login') }}" method="post"> #}
+    {#                            <div class="col-md-12"> #}
+    {#                                <input class="form-control" type="text" name="_username" value="{{ last_username }}" #}
+    {#                                       placeholder="E-mail Address" #}
+    {#                                       required> #}
+    {#                                <div class="valid-feedback">Email field is valid!</div> #}
+    {#                                <div class="invalid-feedback">Email field cannot be blank!</div> #}
+    {#                            </div> #}
+    {#                            <br> #}
+    {#                            <div class="col-md-12"> #}
+    {#                                <input class="form-control" type="password" name="_password" id="password" #}
+    {#                                       placeholder="Password" #}
+    {#                                       required> #}
+    {#                                <div class="valid-feedback">Password field is valid!</div> #}
+    {#                                <div class="invalid-feedback">Password field cannot be blank!</div> #}
+    {#                            </div> #}
+    {#                            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}"> #}
+    {#                            <div class="form-button mt-3"> #}
+    {#                                <button id="submit" type="submit" class="btn btn-primary">Log in</button> #}
+    {#                            </div> #}
+    {#                        </form> #}
+    {#                    </div> #}
+    {#                </div> #}
+    {#            </div> #}
+    {#        </div> #}
+    {#    </div> #}
+
+    <div class="login-box">
+        <h2>Login</h2>
+        <form method="post">
+            <div class="user-box">
+                <input type="email" name="_username">
+                <label>Username</label>
             </div>
-        </div>
+            <div class="user-box">
+                <input type="password" name="_password">
+                <label>Password</label>
+            </div>
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+            <button class="a" type="submit">Submit</button>
+            <a class="ahref" href="{{ url('app_register') }}">Registration</a>
+        </form>
     </div>
 
 {% endblock %}

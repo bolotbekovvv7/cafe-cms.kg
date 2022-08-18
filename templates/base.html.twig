@@ -6,9 +6,11 @@
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    {% block head %} {% endblock %}
+    <link rel="stylesheet" href="{{ asset('css/base.css') }}">
     <link rel="icon"
           href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-    {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+    {#     Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
     {% block stylesheets %}
         {{ encore_entry_link_tags('app') }}
     {% endblock %}
@@ -18,24 +20,38 @@
     {% endblock %}
 
 </head>
-<body>
-<div class="container">
-    <header class="d-flex justify-content-center py-3">
-        <ul class="nav nav-pills">
-            <li class="nav-item"><a href="{{ url('index_index') }}" class="nav-link active" aria-current="page">Home</a>
-            </li>
-            <li class="nav-item"><a href="{{ url('index_create') }}" class="nav-link">PhotoByTilek</a></li>
-            <li class="nav-item"><a href="{{ url('app_login') }}" class="nav-link">Войти</a></li>
-            <li class="nav-item"><a href="{{ url('app_logout') }}" class="nav-link">Выйти</a></li>
-        </ul>
-    </header>
+{# <body> #}
+{# <div class="x"> #}
+{#    <header class=""> #}
+{#        <ul class="nav nav-pills"> #}
+{#            <li class="nav-item"><a href="{{ url('index_index') }}" class="nav-link active" aria-current="page">Home</a> #}
+{#            </li> #}
+{#            <li class=""><a href="{{ url('index_create') }}" class="head_text">PhotoByTilek</a></li> #}
+{#            <li class=""><a href="{{ url('app_login') }}" class="head_text">Войти</a></li> #}
+{#            <li class=""><a href="{{ url('app_logout') }}" class="head_text">Выйти</a></li> #}
+{#        </ul> #}
+{#    </header> #}
 
-</div>
-<hr class="w-100">
+{# </div> #}
+<header class="p-3 ss text-white">
+    <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="{{ url('index_index') }}" class="nav-link px-2 head_text">Home</a></li>
+                &nbsp;
+                <li><a href="{{ url('index_create') }}" class="nav-link px-2 head_text">ImgByTilek</a></li>
 
-<div class="container">
-    {% block body %}{% endblock %}
-</div>
+            </ul>
+
+            <div class="text-end">
+                <a href="{{ url('app_login') }}" type="button" class=" log">Login</a>
+                <a href="{{ url('app_logout') }}" type="button" class=" log">Log out</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+{% block body %}{% endblock %}
 
 
 <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
