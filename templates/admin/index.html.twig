@@ -22,6 +22,8 @@
                     <td>Админ</td>
                 {% endif %}
                 <td><a class="btn btn-outline-info btn-sm" href="{{ url('app_admin_add',{id: user.id()}) }}">Назначить админом</a></td>
+                <td><a class="btn btn-outline-warning btn-sm" href="{{ url('app_admin_lower',{id: user.id()}) }}">Назначить пользователем</a></td>
+                <td><a class="btn btn-outline-danger btn-sm" href="{{ url('app_user_delete',{id: user.id()}) }}">Удалить пользователя</a></td>
             </tr>
         {% endfor %}
         </tbody>
