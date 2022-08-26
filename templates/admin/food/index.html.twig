@@ -1,0 +1,34 @@
+{% extends 'admin_base.html.twig' %}
+
+{% block title %}Foods table{% endblock %}
+
+{% block body %}
+    <h2>Foods table</h2>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Description</th>
+            <th>Image</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for food in foods %}
+            <tr>
+                <td>{{ food.id }}</td>
+                <td>{{ food.name }}</td>
+                <td>{{ food.category }}</td>
+                <td>{{ food.description }}</td>
+                <td><img style="width: 70px; height: auto" src="/uploads/{{ food.img() }}"></td>
+                {#        <td><a href="{{ url('app_food_edit') }}">Редактировать</a></td> #}
+                {#        <td><a href="{{ url('app_food_delete') }}" >Удалить</a> </td> #}
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

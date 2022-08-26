@@ -1,31 +1,7 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin_base.html.twig' %}
 
 {% block title %}Hello AdminController!{% endblock %}
 
 {% block body %}
-    <table class="table">
-        <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Email</th>
-            <th scope="col">Roles</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for user in users %}
-            <tr>
-                <th scope="row">{{ user.id() }}</th>
-                <td>{{ user.email() }}</td>
-                {% if user.roles()[0] == 'ROLE_USER' %}
-                    <td>Пользователь</td>
-                {% else %}
-                    <td>Админ</td>
-                {% endif %}
-                <td><a class="btn btn-outline-info btn-sm" href="{{ url('app_admin_add',{id: user.id()}) }}">Назначить админом</a></td>
-                <td><a class="btn btn-outline-warning btn-sm" href="{{ url('app_admin_lower',{id: user.id()}) }}">Назначить пользователем</a></td>
-                <td><a class="btn btn-outline-danger btn-sm" href="{{ url('app_user_delete',{id: user.id()}) }}">Удалить пользователя</a></td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+
 {% endblock %}

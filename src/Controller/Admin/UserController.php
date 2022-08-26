@@ -10,14 +10,21 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class UserController extends AbstractController
 {
-    #[Route('/users', name: 'app_admin')]
+    #[Route('/', name: 'app_admin')]
     public function index(UserRepository $userRepository): Response
     {
-        $users = $userRepository->findAll();
-        return $this->render(view: 'admin/index.html.twig', parameters: [
-            'users' => $users
-        ]);
+
+        return $this->render(view: 'admin/index.html.twig', parameters: []);
     }
+
+    #[Route('/users', name: 'app_admin_users')]
+    public function users(UserRepository $userRepository): Response
+    {
+        $users = $userRepository->findAll();
+
+        return $this->render(view: 'admin/users.html.twig', parameters: ['users' => $users]);
+    }
+
 
     #[Route('/users/add/{id}', name: 'app_admin_add')]
     public function add(UserRepository $userRepository, Request $request, \Doctrine\Persistence\ManagerRegistry $managerRegistry): Response
