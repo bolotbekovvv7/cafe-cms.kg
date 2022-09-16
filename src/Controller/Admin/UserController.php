@@ -32,7 +32,7 @@ class UserController extends AbstractController
         $user = $userRepository->find($request->get('id'));
         $user->setRoles(['ROLE_ADMIN']);
         $managerRegistry->getManager()->flush();
-        return $this->redirectToRoute('app_admin');
+        return $this->redirectToRoute('app_admin_users');
     }
 
     #[Route('/users/lower/{id}', name: 'app_admin_lower')]
@@ -41,7 +41,7 @@ class UserController extends AbstractController
         $user = $userRepository->find($request->get('id'));
         $user->setRoles(['ROLE_USER']);
         $managerRegistry->getManager()->flush();
-        return $this->redirectToRoute('app_admin');
+        return $this->redirectToRoute('app_admin_users');
     }
 
     #[Route('/users/delete/{id}', name: 'app_user_delete')]
@@ -50,7 +50,7 @@ class UserController extends AbstractController
         $user = $userRepository->find($request->get('id'));
         $userRepository->remove($user);
         $managerRegistry->getManager()->flush();
-        return $this->redirectToRoute('app_admin');
+        return $this->redirectToRoute('app_admin_users');
     }
 
 

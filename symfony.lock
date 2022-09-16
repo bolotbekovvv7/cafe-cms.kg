@@ -1,4 +1,7 @@
 {
+    "babdev/pagerfanta-bundle": {
+        "version": "v3.7.0"
+    },
     "doctrine/annotations": {
         "version": "1.13",
         "recipe": {
@@ -34,6 +37,9 @@
             "./config/packages/doctrine_migrations.yaml",
             "./migrations/.gitignore"
         ]
+    },
+    "knplabs/knp-paginator-bundle": {
+        "version": "v5.9.0"
     },
     "phpunit/phpunit": {
         "version": "9.5",

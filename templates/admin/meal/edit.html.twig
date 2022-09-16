@@ -1,0 +1,44 @@
+{% extends 'admin_base.html.twig' %}
+
+{% block body %}
+    {#    <form method="post" enctype="multipart/form-data"> #}
+    {#        <input type="text" name="name" placeholder="Name" value="{{ meal.name }}"> #}
+    {#        <input type="text" name="category" placeholder="Category" value="{{ meal.category }}"> #}
+    {#        <textarea  name="text" placeholder="Description" ></textarea> #}
+    {#        <input type="file" name="file"> #}
+    {#        <button type="submit" class="btn btn-outline-success">Сохранить</button> #}
+    {#    </form> #}
+
+    <div class="content">
+        <div class="content-header">
+            <h2> Добавить блюдо</h2>
+        </div>
+        <div class="content-body">
+            <div class="card card-primary">
+                <div class="card-header">
+                    <h3 class="card-title">Quick Example</h3>
+                </div>
+
+                {#                <form method="post" enctype="multipart/form-data"> #}
+                <div class="card-body">
+                    <div class="col-sm-6">
+                        {{ form_start(mealAdd) }}
+                        {{ form_row(mealAdd.name) }}
+                        {{ form_row(mealAdd.category) }}
+                        {{ form_row(mealAdd.img) }}
+                        {{ form_row(mealAdd.description) }}
+
+                        <button type="submit" class="btn">Submit</button>
+                        {{ form_end(mealAdd) }}
+                    </div>
+                </div>
+                {#                </form> #}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block title %}
+
+{% endblock %}
+

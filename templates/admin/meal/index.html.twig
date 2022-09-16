@@ -1,0 +1,56 @@
+{% extends 'admin_base.html.twig' %}
+
+{% block title %} Meal table{% endblock %}
+
+{% block body %}
+    <section class="content-header">
+        <h2>Meal table</h2>
+        <div><a class="btn btn-secondary" href="{{ url('app_meal_create') }}" style="align-content: end">Добавить</a></div>
+    </section>
+    <section class="content">
+        <div class="card">
+            <div class="card-header">Meal</div>
+
+            <div class="card-body">
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Description</th>
+                        <th>Image</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for meal in meals %}
+                        <tr>
+                            <th>{{ meal.id }}</th>
+                            <td>{{ meal.name }}</td>
+                            <td>{{ meal.category }}</td>
+                            <td>{{ meal.description }}</td>
+                            <td><img style="width: 70px; height: auto" src="/uploads/{{ meal.img }}"></td>
+                            {#                            <td><a href="{{ url('app_food_edit',{id: meal.id}) }}">Редактировать</a></td> #}
+                            {#                            <td><a href="{{ url('app_food_delete',{id: meal.id}) }}">Удалить</a></td> #}
+
+                            <td class="text-right py-0 align-middle">
+                                <div class="btn-group btn-group">
+                                    <a href="{{ url('app_meal_edit',{id: meal.id}) }}" class="btn btn-info"><i
+                                                class="fas fa-edit"></i></a>
+                                    <a href="{{ url('app_meal_delete', {id: meal.id}) }}" class="btn btn-danger"><i
+                                                class="fas fa-trash"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                <nav aria-label="Page navigation example">
+                    {{ knp_pagination_render(meals) }}
+                </nav>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

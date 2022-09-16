@@ -11,8 +11,10 @@
     {#    <script src="{{ asset('js/jquery-3.6.min.js') }}"></script> #}
     {#    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"> #}
 
+    <link rel="shortcut icon" href="http://cafe-cms.kg/uploads/Cafe-cms.png" type="image/x-icon">
 
     <!-- Google Font: Source Sans Pro -->
+
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
@@ -83,8 +85,8 @@
                 <div class="navbar-search-block">
                     <form class="form-inline">
                         <div class="input-group input-group-sm">
-                            <input class="form-control form-control-navbar" type="search" placeholder="Search"
-                                   aria-label="Search">
+                            <input class="form-control form-control-navbar" type="text" placeholder="Search"
+                                   aria-label="Search" name="text">
                             <div class="input-group-append">
                                 <button class="btn btn-navbar" type="submit">
                                     <i class="fas fa-search"></i>
@@ -230,14 +232,14 @@
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <a href="{{ url('app_admin_users') }}" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
+                                    <i class="fa fa-users nav-icon" aria-hidden="true"></i>
                                     <p>Пользователи</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="pages/charts/flot.html" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Flot</p>
+                                <a href="{{ url('app_meal') }}" class="nav-link">
+                                    <i class="fa fa-lemon nav-icon" aria-hidden="true"></i>
+                                    <p>Meal</p>
                                 </a>
                             </li>
 
@@ -313,6 +315,7 @@
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
+
         {% block body %}{% endblock %}
     </div>
     <!-- /.content-wrapper -->
