@@ -1,0 +1,31 @@
+{% extends 'admin_base.html.twig' %}
+
+
+
+{% block title %}
+
+{% endblock %}
+
+{% block body %}
+    <div class="content">
+        <div class="content-header">
+            <h2> Добавить категорию</h2>
+        </div>
+        <div class="content-body">
+            <div class="card card-primary">
+                <div class="card-header">
+                    <h3 class="card-title">Quick Example</h3>
+                </div>
+                <div class="card-body">
+                    <div class="col-sm-6">
+                        {{ form_start(CategoryForm) }}
+                        {{ form_row(CategoryForm.name) }}
+                        <button class="btn btn-outline-success" type="submit">Сохранить</button>
+                        {{ form_end(CategoryForm) }}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

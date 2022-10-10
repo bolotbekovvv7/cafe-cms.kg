@@ -10,7 +10,7 @@
 
     {#    <script src="{{ asset('js/jquery-3.6.min.js') }}"></script> #}
     {#    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"> #}
-
+    <script src="https://cdn.ckeditor.com/ckeditor5/35.1.0/classic/ckeditor.js"></script>
     <link rel="shortcut icon" href="http://cafe-cms.kg/uploads/Cafe-cms.png" type="image/x-icon">
 
     <!-- Google Font: Source Sans Pro -->
@@ -236,6 +236,28 @@
                                     <p>Пользователи</p>
                                 </a>
                             </li>
+                        </ul>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ url('app_category') }}" class="nav-link">
+                                    <i class="" aria-hidden="true"></i>
+                                    <p>Категории</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link">
+                            <i class="nav-icon fas fa-tree"></i>
+                            <p>
+                                #
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+
+
+                        <ul class="nav nav-treeview">
+
                             <li class="nav-item">
                                 <a href="{{ url('app_meal') }}" class="nav-link">
                                     <i class="fa fa-lemon nav-icon" aria-hidden="true"></i>
@@ -243,63 +265,10 @@
                                 </a>
                             </li>
 
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-tree"></i>
-                            <p>
-                                UI Elements
-                                <i class="fas fa-angle-left right"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="pages/UI/general.html" class="nav-link">
+                                <a href=" {{ url('app_page') }} " class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>General</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="pages/UI/icons.html" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Icons</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="pages/UI/buttons.html" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Buttons</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="pages/UI/sliders.html" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Sliders</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="pages/UI/modals.html" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Modals & Alerts</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="pages/UI/navbar.html" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Navbar & Tabs</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="pages/UI/timeline.html" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Timeline</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="pages/UI/ribbons.html" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Ribbons</p>
+                                    <p>Pages</p>
                                 </a>
                             </li>
                         </ul>
@@ -344,6 +313,7 @@
 <script src="{{ asset('js/admin/bootstrap.bundle.min.js') }}"></script>
 <script src="{{ asset('js/admin/adminlte.min.js') }}"></script>
 <script src="{{ asset('js/admin/demo.js') }}"></script>
+
 
 {# <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" #}
 {#        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" #}

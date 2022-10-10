@@ -1,0 +1,52 @@
+{% extends 'admin_base.html.twig' %}
+
+{% block title %}Hello CategoryController!{% endblock %}
+
+{% block body %}
+    <section class="content-header">
+        <h2>Pages table</h2>
+        <div><a class="btn btn-secondary" href="{{ url('app_category_add') }}" style="align-content: end">Добавить</a></div>
+    </section>
+    <section class="content">
+        <div class="card">
+            <div class="card-header">Categories</div>
+
+            <div class="card-body">
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+
+
+
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for category in categories %}
+                        <tr>
+                            <th>{{ category.id }}</th>
+                            <td>{{ category.name }}</td>
+
+
+                            <td class="text-right py-0 align-middle">
+                                <div class="btn-group btn-group">
+                                    <a href="{{ url('app_category_edit',{id: category.id}) }}" class="btn btn-info"><i
+                                                class="fas fa-edit"></i></a>
+                                    <a href="{{ url('app_category_delete',{ id: category.id}) }}" class="btn btn-danger"><i
+                                                class="fas fa-trash"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                <nav aria-label="Page navigation example">
+                    {{ knp_pagination_render(categories) }}
+                </nav>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

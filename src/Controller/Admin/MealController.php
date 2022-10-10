@@ -85,7 +85,6 @@ class MealController extends AbstractController
             $managerRegistry->getManager()->flush();
             return $this->redirectToRoute('app_meal');
         }
-
     }
 
     #[Route('/meal/edit/{id}', name: 'app_meal_edit')]
@@ -113,5 +112,4 @@ class MealController extends AbstractController
 
         return $this->render('admin/meal/edit.html.twig', ['meal' => $meal, 'mealAdd' => $form->createView()]);
     }
-
 }
